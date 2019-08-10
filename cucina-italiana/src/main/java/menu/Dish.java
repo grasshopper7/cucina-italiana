@@ -18,6 +18,18 @@ public class Dish {
 		this.price = price;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public DishType getType() {
+		return type;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
 	public static Comparator<Dish> compareDishByName() {
 
 		return new Comparator<Dish>() {

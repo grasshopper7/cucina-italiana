@@ -13,4 +13,8 @@ public class Kitchen {
 	public static void acceptOrder(Order order) {
 		orders.add(order);
 	}
+
+	public static Order retrieveOrder(int id) {
+		return orders.stream().filter(o -> o.getOrderId() == id).findAny().orElseThrow(RuntimeException::new);
+	}
 }

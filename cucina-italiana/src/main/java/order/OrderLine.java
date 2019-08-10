@@ -13,4 +13,12 @@ public class OrderLine {
 		this.dish = dish;
 		this.quantity = quantity;
 	}
+
+	public Dish getDish() {
+		return dish;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
 }

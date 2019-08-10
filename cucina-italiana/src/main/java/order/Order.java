@@ -18,6 +18,10 @@ public class Order {
 		return orderId;
 	}
 	
+	public List<OrderLine> getDishes() {
+		return new ArrayList<>(items);
+	}
+	
 	public void addDishToOrder(Dish dish, int qty) {
 		items.add(new OrderLine(dish, qty));
 	}
