@@ -8,12 +8,10 @@ import menu.Menu;
 
 public class OrderStepDefiniton {
 
-	private Customer customer;
-
 	@Given("Customer reads the menu")
 	public void customer_reads_the_menu() {
 
-		customer = new Customer(Menu.retrieveMenu());
+		Customer customer = new Customer(Menu.retrieveMenu());
 	}
 
 	@When("Orders the dishes")
