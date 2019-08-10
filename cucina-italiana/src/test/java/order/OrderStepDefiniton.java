@@ -1,15 +1,19 @@
 package order;
 
+import actor.Customer;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import menu.Menu;
 
 public class OrderStepDefiniton {
 
+	private Customer customer;
+
 	@Given("Customer reads the menu")
 	public void customer_reads_the_menu() {
-		
-		throw new cucumber.api.PendingException();
+
+		customer = new Customer(Menu.retrieveMenu());
 	}
 
 	@When("Orders the dishes")
