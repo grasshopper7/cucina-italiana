@@ -19,10 +19,6 @@ public class Customer {
 	}
 
 	public int orderDishes(Map<String, Integer> dishDetails) {
-		return createOrder(dishDetails);
-	}
-
-	private int createOrder(Map<String, Integer> dishDetails) {
 
 		Order order = new Order();
 		dishDetails.forEach((name, qty) -> {
