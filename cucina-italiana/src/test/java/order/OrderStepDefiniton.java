@@ -42,13 +42,13 @@ public class OrderStepDefiniton {
 		Order order = Kitchen.retrieveOrder(orderId);
 	    
 	    List<OrderLine> dishes = order.getDishes();
-	    assertThat("num of dishes qty", dishes.size(), equalTo(expectedDishDetails.size()));
+	    assertThat("Mismatch of number of dishes in order", dishes.size(), equalTo(expectedDishDetails.size()));
 	    
 	    dishes.forEach(ol -> {
 	    	String actualDishName = ol.getDish().getName();
 	    	
-		    assertThat("dish name", true, equalTo(expectedDishDetails.containsKey(actualDishName)));
-	    	assertThat("dish qty", ol.getQuantity(), equalTo(expectedDishDetails.get(actualDishName)));
+		    assertThat("Mismatch of Dish Name", true, equalTo(expectedDishDetails.containsKey(actualDishName)));
+	    	assertThat("Mismatch of Dish Quantity", ol.getQuantity(), equalTo(expectedDishDetails.get(actualDishName)));
 	    });
 	}
 }
