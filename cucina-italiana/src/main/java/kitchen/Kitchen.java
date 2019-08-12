@@ -3,6 +3,7 @@ package kitchen;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import order.Order;
 
@@ -14,7 +15,7 @@ public class Kitchen {
 		orders.add(order);
 	}
 
-	public static Order retrieveOrder(int id) {
-		return orders.stream().filter(o -> o.getOrderId() == id).findAny().orElseThrow(RuntimeException::new);
+	public static Optional<Order> retrieveOrder(int id) {
+		return orders.stream().filter(o -> o.getOrderId() == id).findAny();
 	}
 }

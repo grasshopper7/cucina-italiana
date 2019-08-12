@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.equalTo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import actor.Customer;
 import cucumber.api.java.en.Given;
@@ -39,9 +40,11 @@ public class OrderStepDefiniton {
 	@Then("Kitchen should receive the order")
 	public void kitchen_should_receive_the_order() {
 
-		Order order = Kitchen.retrieveOrder(orderId);
+		Optional<Order> order = Kitchen.retrieveOrder(orderId);
+		
+		assertThat("Order not sent to the kitchen", true, equalTo(order.isPresent()));
 	    
-	    List<OrderLine> dishes = order.getDishes();
+	    List<OrderLine> dishes = order.get().getDishes();
 	    assertThat("Mismatch of number of dishes in order", dishes.size(), equalTo(expectedDishDetails.size()));
 	    
 	    dishes.forEach(ol -> {
