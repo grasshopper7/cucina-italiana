@@ -1,2 +1,2 @@
 
-Refer to this [article](https://github.com/grasshopper7/cucina-italiana) for a detailed explanation.
+Refer to this [article](https://tutorial.grasshopper.tech/bdd-process/) for a detailed explanation.
